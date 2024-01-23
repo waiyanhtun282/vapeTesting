@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { CiSearch, CiShoppingCart, CiMenuBurger } from "react-icons/ci";
+import Footer from "@/components/Footer/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,7 +18,22 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <div className="container  bg-sky-500">
+          <div className="mx-auto     ">
+            <nav className=" flex justify-between  py-3   ">
+              <h1 className=" text-white font-bold">PI 7C</h1>
+              <div className=" flex gap-5 text-white ">
+                <CiSearch size={20} />
+                <CiShoppingCart size={20} />
+                <CiMenuBurger size={20} />
+              </div>
+            </nav>
+          </div>
+        </div>
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }
